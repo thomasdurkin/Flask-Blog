@@ -1,0 +1,12 @@
+{
+	"remote.extensionKind": {
+
+		"pub.name": [
+			"ui"
+		]
+	},
+
+	"emmet.includeLanguages": {
+         "django-html": "html",
+    }
+}
