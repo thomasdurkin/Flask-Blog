@@ -11,7 +11,9 @@ import os
 @app.route("/")
 @app.route("/home")
 def home():
-	posts = Post.query.all()
+	page = request.args.get('page', 1, type = int)
+	# Pagination with 4 posts per page ordered by date
+	posts = Post.query.order_by(Post.date_posted.desc()).paginate(page = page, per_page=4)
 	return render_template('home.html', posts = posts)
 
 @app.route("/about")
